@@ -4,8 +4,14 @@
 ############################################## Create user account
 export USER=nbartosi
 adduser $USER
+
+# Enable SSH login for the user
 echo "AllowUsers  root nbartosi" >> /etc/ssh/sshd_config
 systemctl restart sshd
+# IMPORTANT: EXECUTE THE FOLLOWING COMMANDS UNDER THE NEW USER
+# mkdir ~/.ssh && chmod 700 ~/.ssh
+# touch ~/.ssh/authorized_keys
+# Add public keys to be used for login into ~/.ssh/authorized_keys
 
 ############################################## Set up EOS client
 # following: https://cern.service-now.com/service-portal?id=kb_article&sys_id=d3faa3af4fc2d6404b4abc511310c785
