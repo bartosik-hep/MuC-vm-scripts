@@ -5,6 +5,7 @@
 export USER=nbartosi
 adduser $USER
 echo "AllowUsers  root nbartosi" >> /etc/ssh/sshd_config
+systemctl restart sshd
 
 ############################################## Set up EOS client
 # following: https://cern.service-now.com/service-portal?id=kb_article&sys_id=d3faa3af4fc2d6404b4abc511310c785
